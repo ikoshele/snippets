@@ -151,3 +151,17 @@ const findLargestNumber = (numbers) => {
 }
 
 //////////////////////////////////////////////////////////////////////////////////////
+
+//Find and add unique nums 
+
+const uniqueNumbers  = [2, 1, 4, 9];
+
+const addUniqueNumbers = () => {
+  for (let i = 0; i < addUniqueNumbers.arguments.length; i++) {
+    if (!uniqueNumbers.includes(addUniqueNumbers.arguments[i])) {
+      uniqueNumbers.push(addUniqueNumbers.arguments[i]);
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
