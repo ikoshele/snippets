@@ -120,3 +120,19 @@ console.log(numbers);
 // Выведет [3, 5, 7, 9, 10, 12];
 
 ///////////////////////////////////////////////////////////////////////////////////////
+
+// Find and display the longest word in a string
+
+const findLongestWord = (str) => {
+  const wordsArray = str.split(' ');
+  let maxLength = '';
+  console.log(wordsArray);
+  for (let i = 0; i < wordsArray.length; i++) {
+    if (maxLength.length < wordsArray[i].length) {
+      maxLength = wordsArray[i];
+    } 
+  }
+  return maxLength;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
