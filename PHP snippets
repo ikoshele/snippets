@@ -1,0 +1,21 @@
+RSS feed parsing
+<?php
+				        $url = "http://feeds.feedburner.com/TechCrunch/startups"; // xmld.xml contains above data
+				        $feeds = file_get_contents($url);
+				        $rss = simplexml_load_string($feeds);
+				        $items = [];
+				        foreach($rss->channel->item as $entry) {
+				        	$image = '';
+				        	$description = '';
+				        	$items[] = [
+				        		'url' => $entry->link,
+				        		'title' => $entry->title,
+				        		'image' => $image,
+				        		'description' => $entry->description,
+				        		'date' => $entry->pubDate,
+				        	];
+				        }
+				        foreach ($items as $item) {
+				        	printf('<div class="grid-item"><div class="date_and_title"><span class="pub_date">%s</span><h2><a href="%s" target="_blank">%s</a></h2></div><img src="img/new1.jpg"></img><div class="news_desc"><p>%s</p></div><div class="read_more"><a href="%s" target="_blank" class="read_more_button">Read more <img src="img/red_arrow.svg" /></a></div></div>', $item['date'], $item['url'], $item['title'], $item['description'], $item['url']);
+				        }
+?> 
